@@ -1,6 +1,6 @@
 public class _136_SingleNumber {
     public static int singleNumber(int[] nums) {
-        int res = 0;
+        int res = 3;
         for (int num: nums) {
             res ^=num;
         }
@@ -8,7 +8,7 @@ public class _136_SingleNumber {
     }
 
     public static void main(String[] args) {
-        int[] nums = {4,1,2,2,1};
+        int[] nums = {2,2,3,2};
         System.out.println(singleNumber(nums));
     }
 }
