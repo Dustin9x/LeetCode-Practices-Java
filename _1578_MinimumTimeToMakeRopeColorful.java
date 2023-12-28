@@ -1,20 +1,14 @@
 public class _1578_MinimumTimeToMakeRopeColorful {
     public static int minCost(String colors, int[] neededTime) {
         int res = 0;
-
-        for (int i = 0, j=1; j < neededTime.length;) {
+        for (int i = 0, j=1; j < neededTime.length; j++) {
             if(colors.charAt(i) == colors.charAt(j)) {
+                res+= Math.min(neededTime[i],neededTime[j]);
                 if(neededTime[i] < neededTime[j]){
-                    res+=neededTime[i];
                     i = j;
-                    j++;
-                } else {
-                    res+=neededTime[j];
-                    j++;
                 }
             }else{
                 i = j;
-                j++;
             }
         }
         return res;
